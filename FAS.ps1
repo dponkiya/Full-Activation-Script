@@ -49,3 +49,21 @@ if(get-process | ?{$_.path -eq "C:\Program Files\TeamViewer\TeamViewer.exe"}){
 $string2 = ".\TeamViewer.exe assignment --id 0001CoABChCLIFRw6pIR7ZM-rtBZ_uZyEigIACAAAgAJAJj9w7Mhl6YmRLMIFQa0c_RprEIH4qubIw19lUjKWAUEGkBicT5_RrBxa2BKpNREaENE9SJRlxigl5FQqElLdoZAaWGDdpWIQyEgkKOfbGNusxkq_PclTj-Yx2wbC74YbORGIAEQkJePnws= --retries=3 --timeout=120"
 Invoke-Expression $string2
 Write-Output "Done"
+
+Start-Sleep -s 10
+
+$processName = "TeamViewer"
+ 
+# Get the process(es) with the specified name
+$processes = Get-Process -Name $processName -ErrorAction SilentlyContinue
+ 
+if ($processes) {
+    # Kill the process(es) forcefully
+    $processes | ForEach-Object {
+        $_.Kill()
+    }
+    Write-Host "Process '$processName' killed successfully."
+} else {
+    Write-Host "No process with the name '$processName' found."
+}
+
