@@ -7,7 +7,7 @@
 
 
 ## --------------------------------------------------------------------------
-
+cd C:\
 ## Run the silent installation of the TeamViewer Host (Custom Module), referencing the Custom Config ID:
 ## Please adjust the path to the TeamViewer_Host.msi package
 Start-Process msiexec.exe -Wait '/I TeamViewer_Full.msi /qn CUSTOMCONFIGID=6tczic3'
