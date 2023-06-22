@@ -6,10 +6,6 @@
 ## If this file extension is ".txt", rename it to ".ps1" and run it with Admin privileges
 
 
-## Download the Msi file and save it in root of C drive.
-$url = "https://files.evertz.com/teamviewer/TeamViewer_Full.msi"
-$dest = "C:\TeamViewer_Full.msi"
-Invoke-Webrequest -Uri $url -Outfile $dest -ErrorAction SilentlyContinue
 cd C:\
 ## Run the silent installation of the TeamViewer Host (Custom Module), referencing the Custom Config ID:
 ## Please adjust the path to the TeamViewer_Host.msi package
